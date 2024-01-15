@@ -67,9 +67,7 @@ export const RealtimeChart = () => {
           onChange={(e) => setParticule(e.target.value as string)}
           placeholder="Particule"
         />
-        {/* <CustomDropDown placeholder='Name' value={''} onChange={(e) => console.log(e)} /> */}
       </div>
-      {/* <div className='w-full h-96 bg-slate-400 rounded-md'></div> */}
       <ReactApexChart
         width={"100%"}
         height={"384px"}
