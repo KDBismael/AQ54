@@ -16,7 +16,27 @@ import { RangedChart } from './components/charts/rangedChart';
 function App() {
   // const data = usePolling();
 
-
+  const chartOptions: ApexOptions = {
+    chart: {
+      height: 350,
+      type: 'area'
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'smooth'
+    },
+    xaxis: {
+      type: 'datetime',
+      categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z",]
+    },
+    tooltip: {
+      x: {
+        format: 'dd-MM-yy HH:mm'
+      },
+    },
+  }
 
 
   return (
@@ -34,13 +54,13 @@ function App() {
             {/* <CustomDropDown placeholder='Name' value={''} onChange={(e) => console.log(e)} /> */}
           </div>
           {/* <div className='w-full h-96 bg-slate-400 rounded-md'></div> */}
-          {/* <ReactApexChart width={'100%'} height={'384px'} type='area' options={chartOptions} series={[{
+          <ReactApexChart width={'100%'} height={'384px'} type='area' options={chartOptions} series={[{
             name: 'series1',
             data: [31, 40, 28, 51, 42, 109, 100]
           }, {
             name: 'series2',
             data: [11, 32, 45, 32, 34, 52, 41]
-          }]} ></ReactApexChart> */}
+          }]} ></ReactApexChart>
           <button className='border px-3 py-2 rounded-md mt-1 hover:border-cyan-950 transition-colors'>Visualiser</button>
         </div>
         <RangedChart />
