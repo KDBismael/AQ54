@@ -31,6 +31,11 @@ export const RangedChart = () => {
     chart: {
       height: 350,
       type: "bar",
+      zoom: {
+        enabled: true,
+        type: "x",
+        autoScaleYaxis: true,
+      },
     },
     plotOptions: {
       bar: {
