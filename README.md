@@ -14,11 +14,11 @@ Image Docker:
 docker pull kdbismael/aq54
 ```
 Fonctionnement:
-- Visualisation en temps differé
-    selection multiple des stations
-    selection de unique des particules
-    selection des dates de debut et fin
+- Visualisation en temps differé  
+    selection multiple des stations  
+    selection de unique des particules  
+    selection des dates de debut et fin  
 
-_ Visualisation temps réel
-    selection de unique des stations
-    selection de unique des particules
+- Visualisation temps réel  
+    selection de unique des stations  
+    selection de unique des particules  
