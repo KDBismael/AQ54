@@ -8,7 +8,7 @@ import { CustomDropDown } from "../dropDown";
 export const RealtimeChart = () => {
   const data = usePolling();
   const [station, setStation] = useState("SMART188");
-  const [particule, setParticule] = useState("CO");
+  const [particule, setParticule] = useState("CO(mg/m3)");
 
   const chartOptions: ApexOptions = {
     chart: {
@@ -59,12 +59,12 @@ export const RealtimeChart = () => {
           options={Stations}
           placeholder="Station"
           value={station}
-          onChange={(e) => setStation(e.target.value)}
+          onChange={(e) => setStation(e.target.value as string)}
         />
         <CustomDropDown
           options={Particules}
           value={particule}
-          onChange={(e) => setParticule(e.target.value)}
+          onChange={(e) => setParticule(e.target.value as string)}
           placeholder="Particule"
         />
         {/* <CustomDropDown placeholder='Name' value={''} onChange={(e) => console.log(e)} /> */}
@@ -79,14 +79,14 @@ export const RealtimeChart = () => {
           {
             name: particule,
             data: data
-              .filter((d) => d.sensor == particule.toLowerCase())
+              .filter((d) => d.sensor == particule.toLowerCase().split('(')[0])
               .map((d) => d.value),
           },
         ]}
       ></ReactApexChart>
-      <button className="border px-3 py-2 rounded-md mt-1 hover:border-cyan-950 transition-colors">
+      {/* <button className="border px-3 py-2 rounded-md mt-1 hover:border-cyan-950 transition-colors">
         Visualiser
-      </button>
+      </button> */}
     </div>
   );
 };

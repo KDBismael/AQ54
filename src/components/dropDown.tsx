@@ -1,17 +1,17 @@
 import { FormControl, MenuItem, OutlinedInput, Select, SelectProps } from "@mui/material";
 
-interface Props extends SelectProps<string> {
+interface Props extends SelectProps<string | string[]> {
     placeholder: string;
     options: string[];
 }
 
 export const CustomDropDown = (props: Props) => {
-    const { options, value, displayEmpty, input, placeholder, ...propsRest } = props;
+    const { multiple, options, value, displayEmpty, input, placeholder, ...propsRest } = props;
 
     return <>
         <FormControl sx={{ m: 1, width: '100%', mt: 2 }}>
             <Select
-                // multiple
+                multiple={multiple}
                 displayEmpty
                 value={value}
                 input={<OutlinedInput />}

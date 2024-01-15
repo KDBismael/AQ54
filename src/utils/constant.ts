@@ -1,5 +1,5 @@
 const Stations = ['SMART188', 'SMART189'];
-const Particules = ["CO", "CO2", "NO2", "O3", "PM10", "PM2.5", "RH", "T", "Temp. int.", "VOC",];
+const Particules = ["CO(mg/m3)", "NO2(µg/m³)", "O3(µg/m³)", "PM10(µg/m³)", "PM2.5(µg/m³)", "RH(%)", "T(°C)", "Temp. int.(°C)"];
 const currentDate = new Date();
 const yesterday = new Date();
 yesterday.setDate(currentDate.getDate() - 1);

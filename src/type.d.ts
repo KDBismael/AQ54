@@ -28,6 +28,11 @@ interface RangedDataItem {
     voc: number;
 };
 
+interface ParticuleData {
+    timestamp: string;
+    value: string | number;
+}
+
 interface RangedStationData {
     raw_data: RangedDataItem[];
 };
