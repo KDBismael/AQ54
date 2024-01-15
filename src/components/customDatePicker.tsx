@@ -22,7 +22,7 @@ export const CustomDatePicker = (props: Props) => {
         return () => { };
     }, [cleared]);
 
-    return <FormControl sx={{ m: 1, width: '100%', mt: 3 }}>
+    return <FormControl sx={{ m: 1, width: '100%', mt: 2 }}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DesktopDatePicker slotProps={{
                 field: { clearable: true, onClear: () => setCleared(true) },

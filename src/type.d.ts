@@ -10,6 +10,7 @@ interface StationData {
 }
 
 interface RangedDataItem {
+    [key: string]: number | string
     AUX1_INPUT: number | null;
     AUX2_INPUT: number | null;
     co: number;

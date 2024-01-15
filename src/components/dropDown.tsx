@@ -1,26 +1,15 @@
 import { FormControl, MenuItem, OutlinedInput, Select, SelectProps } from "@mui/material";
 
-interface Props extends SelectProps {
-    placeholder: string
+interface Props extends SelectProps<string> {
+    placeholder: string;
+    options: string[];
 }
 
 export const CustomDropDown = (props: Props) => {
-    const { value, displayEmpty, input, placeholder, ...propsRest } = props;
-    const names = [
-        'Oliver Hansen',
-        'Van Henry',
-        'April Tucker',
-        'Ralph Hubbard',
-        'Omar Alexander',
-        'Carlos Abbott',
-        'Miriam Wagner',
-        'Bradley Wilkerson',
-        'Virginia Andrews',
-        'Kelly Snyder',
-    ];
+    const { options, value, displayEmpty, input, placeholder, ...propsRest } = props;
 
     return <>
-        <FormControl sx={{ m: 1, width: '100%', mt: 3 }}>
+        <FormControl sx={{ m: 1, width: '100%', mt: 2 }}>
             <Select
                 // multiple
                 displayEmpty
@@ -40,13 +29,13 @@ export const CustomDropDown = (props: Props) => {
                 <MenuItem disabled value="">
                     <span>{placeholder}</span>
                 </MenuItem>
-                {names.map((name) => (
+                {options.map((opt) => (
                     <MenuItem
-                        key={name}
-                        value={name}
+                        key={opt}
+                        value={opt}
                     // style={getStyles(name, personName, theme)}
                     >
-                        {name}
+                        {opt}
                     </MenuItem>
                 ))}
             </Select>
